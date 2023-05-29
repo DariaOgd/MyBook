@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/e7fa2f4fe0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href=" {% static 'detail.css' %}">
+</head>
+<body>
+    <div class="nav">
+        <div class="left">Books</div>
+        <div class="right">
+            <a href="" class="browse">Browse</a>
+            <a href="" class="add">Add a book</a>
+        </div>
+    </div>
+
+    
+
+    {% block content %}
+    
+    <div class="grid">
+        <div class="img">
+            <img src="{{book.image.url}}" alt="">
+        </div>
+        
+        <div class="right">
+            <div class="category">{%block category %}{{book.category}}{% endblock %}</div>
+            <p>{%block author %}{{book.author}}{% endblock %}</p>
+            <h1>{%block title %}{{book.name}}{% endblock %}</h1>
+            <h2>{%block desc %}{{book.description}}{% endblock %}</h2>
+            
+    
+        </div>
+    </div>
+
+    
+    {% endblock %}
+    <div class="bottom">
+        <div class="edit"><i class="fa-solid fa-pen-to-square"></i></div>
+        
+        <a class="delete"><i class="fa-solid fa-trash"></i></div>
+    </div>
+
+    <div class="related">
+        <div class="grid">
+            {%for i in related_book%}
+            <a href="{% url 'book:detail' i.id %}">
+            <div class="book">
+                <div class="">
+                    
+                    <img src="{{i.image.url}}" alt="">
+                </div>
+                <div class="text">
+                    <h2>
+                        {{i.name}}
+                    </h2>
+                    <p>{{i.author}}</p>
+                </div>
+
+            </div>
+        </a>
+                
+                {% endfor %}
+        </div>
+    </div>
+    
+     
+ 
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="left">Books</div>
+        <div class="right">
+            <a href="" class="browse">Browse</a>
+            <a href="" class="add">Add a book</a>
+        </div>
+    </div>
+    <div class="info">
+        <h2>All your books in one place</h2>
+        {% load static %}
+        <img src="{% static 'undraw.svg' %}" alt="">
+        
+    </div>
+
+    <div class="books">
+        <h2 class="top">Newest books in your collection</h2>
+        <div class="grid">
+            
+            {%for i in book%}
+            <a href="{% url 'book:detail' i.id %}">
+            <div class="book">
+                <div class="">
+                    
+                    <img src="{{i.image.url}}" alt="">
+                </div>
+                <div class="text">
+                    <h2>
+                        {{i.name}}
+                    </h2>
+                    <p>{{i.author}}</p>
+                </div>
+
+            </div>
+        </a>
+                
+                {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>
