@@ -1,5 +1,7 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404, redirect
+
 from .models import Book
+from .forms import NewBookForm
 # Create your views here.
 
 def detail(request, pk):
@@ -11,3 +13,24 @@ def detail(request, pk):
         'book':book,
         'related_book' : related_book
     })
+
+
+def new(request):
+    form = NewBookForm()
+
+    if request.method == 'POST':
+        form = NewBookForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            book = form.save(commit=False)
+            book.save()
+
+            return redirect('book:detail', pk=book.id)
+    else:
+        form = NewBookForm()
+
+    return render(request, 'book/form.html',{
+        'form':form,
+        'title': 'New book',
+    })
+
