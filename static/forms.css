@@ -17,6 +17,9 @@
   font-weight: bolder;
   padding: 15px;
 }
+.nav .left a {
+  color: black;
+}
 .nav .right {
   display: flex;
   gap: 20px;

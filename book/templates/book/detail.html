@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="nav">
-        <div class="left">Books</div>
+        <div class="left"><a href="{% url 'index' %}">Books</a></div>
         <div class="right">
             <a href="" class="browse">Browse</a>
             <a href="" class="add">Add a book</a>
@@ -40,12 +40,13 @@
     
     {% endblock %}
     <div class="bottom">
-        <div class="edit"><i class="fa-solid fa-pen-to-square"></i></div>
+        <a class="edit"  href="{% url 'book:edit' book.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
         
         <a class="delete" href="{% url 'book:delete' book.id %}"><i class="fa-solid fa-trash"></i></div>
     </div>
 
     <div class="related">
+        
         <div class="grid">
             {%for i in related_book%}
             <a href="{% url 'book:detail' i.id %}">

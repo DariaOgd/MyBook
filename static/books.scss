@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    .left{
+        font-size: larger;
+        font-weight: bolder;
+        padding: 15px;
+        a{
+            color: black;
+        }
+    }
+    .right{
+        display: flex;
+        gap: 20px;
+        width: 18%;
+        .browse{
+            padding: 15px;
+            color: black;
+        }
+        .add{
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border-radius: 12px;
+        }
+        
+    }
+}
+
+.grid{
+    display: flex;
+    flex: 6;
+
+    .col1{
+        flex: 1.5;
+    }
+    .col2{
+        flex: 6;
+        display: grid   ;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        overflow: hidden;
+        
+    }
+    img{
+        border-radius: 10px;
+        height: 13rem;
+    }
+
+    .book{
+        padding: 20px;
+        
+        
+    }
+
+
+    .col1{
+       
+        height: 86vh;
+        border-right: 1px solid rgba(0, 0, 0, 0.212);
+
+        form{
+            display: flex;
+            padding: 20px;
+            flex-direction: column;
+            input{
+                border: none;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: rgba(220, 220, 220, 0.596);
+            }
+            button{
+                margin-top: 18px;
+                width: 50%;
+                padding: 10px;
+                background-color: black;
+                color: white;
+                border-radius: 12px;
+                cursor: pointer;
+            }
+        }
+
+        p{
+            padding: 20px;
+            font-size: 16px;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+            padding-right: 20px;
+            li{
+                padding: 8px;
+                
+            }
+            a{
+                color: rgb(87, 86, 86);
+            }
+            li:hover{
+                border-radius: 12px;
+                background-color: rgba(220, 220, 220, 0.36);
+            }
+            
+        }
+
+        .del{
+            li{
+                a{
+                    color: white;
+                    font-size: small;
+
+                }
+                border-radius: 10px;
+                text-align: center;
+                
+                width: 40%;
+                background-color: rgb(230, 113, 113);
+            }
+            li:hover{
+                background-color: rgb(230, 89, 89);
+            }
+
+        }
+    }
+    .grid{
+        padding-left: 30px;
+        padding-left: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 0.5fr;
+
+        .book{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h2{
+                padding-top: 8px;
+                font-size: medium;
+                color: black;
+            }
+            p{
+                font-size: small;
+                color: gray;
+            }
+        }
+        a{
+            text-align: center;
+        }
+    }
+
+    
+}

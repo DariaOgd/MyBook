@@ -10,3 +10,11 @@ class NewBookForm(forms.ModelForm):
 
 
 
+class EditBookForm(forms.ModelForm):
+    class Meta:
+        model =Book
+        fields = ( 'name', 'description', 'author', 'image', )
+        
+
+
+

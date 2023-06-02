@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.nav .left {
+  font-size: larger;
+  font-weight: bolder;
+  padding: 15px;
+}
+.nav .left a {
+  color: black;
+}
+.nav .right {
+  display: flex;
+  gap: 20px;
+  width: 18%;
+}
+.nav .right .browse {
+  padding: 15px;
+  color: black;
+}
+.nav .right .add {
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border-radius: 12px;
+}
+
+.grid {
+  display: flex;
+  flex: 6;
+}
+.grid .col1 {
+  flex: 1.5;
+}
+.grid .col2 {
+  flex: 6;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  overflow: hidden;
+}
+.grid img {
+  border-radius: 10px;
+  height: 13rem;
+}
+.grid .book {
+  padding: 20px;
+}
+.grid .col1 {
+  height: 86vh;
+  border-right: 1px solid rgba(0, 0, 0, 0.212);
+}
+.grid .col1 form {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+.grid .col1 form input {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(220, 220, 220, 0.596);
+}
+.grid .col1 form button {
+  margin-top: 18px;
+  width: 50%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.grid .col1 p {
+  padding: 20px;
+  font-size: 16px;
+}
+.grid .col1 ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.grid .col1 ul li {
+  padding: 8px;
+}
+.grid .col1 ul a {
+  color: rgb(87, 86, 86);
+}
+.grid .col1 ul li:hover {
+  border-radius: 12px;
+  background-color: rgba(220, 220, 220, 0.36);
+}
+.grid .col1 .del li {
+  border-radius: 10px;
+  text-align: center;
+  width: 40%;
+  background-color: rgb(230, 113, 113);
+}
+.grid .col1 .del li a {
+  color: white;
+  font-size: small;
+}
+.grid .col1 .del li:hover {
+  background-color: rgb(230, 89, 89);
+}
+.grid .grid {
+  padding-left: 30px;
+  padding-left: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr;
+}
+.grid .grid .book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.grid .grid .book h2 {
+  padding-top: 8px;
+  font-size: medium;
+  color: black;
+}
+.grid .grid .book p {
+  font-size: small;
+  color: gray;
+}
+.grid .grid a {
+  text-align: center;
+}/*# sourceMappingURL=books.css.map */

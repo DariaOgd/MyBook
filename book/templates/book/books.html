@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href=" {% static 'books.css' %}">
+</head>
+<body>
+    <div class="nav">
+        <div class="left"><a href="{% url 'index' %}">Books</a></div>
+        <div class="right">
+            <a href="{% url 'book:books' %}" class="browse">Browse</a>
+            <a href="{% url 'book:new' %}" class="add">Add a book</a>
+        </div>
+    </div>
+
+   
+
+    {%block content %}
+    <div class="grid">
+        <div class="col1">
+            
+            <form action="" method="get" action="{% url 'book:books' %}">
+                <input type="text" name="query">
+                <button class="search">Browse</button>
+            </form>
+
+            
+            <p>Categories</p>
+            <ul>
+                {% for category in categories %}
+                <li class="">
+                    <a href="{% url 'book:books'%}?query={{query}}&category={{category.id}}">{{category.name}}</a>
+                </li>
+
+                {%endfor %}
+            </ul>
+            <p>Clear filters</p>
+            <ul class="del">
+                <li><a href="{% url 'book:books' %} " class="btn-del">Clear</a></li>
+            </ul>
+        </div>
+       
+            
+               
+                <div class="grid">
+                    
+                    {%for i in books%}
+                    <a href="{% url 'book:detail' i.id %}">
+                    <div class="book">
+                        <div class="">
+                            
+                            <img src="{{i.image.url}}" alt="">
+                        </div>
+                        <div class="text">
+                            <h2>
+                                {{i.name}}
+                            </h2>
+                            <p>{{i.author}}</p>
+                        </div>
+        
+                    </div>
+                </a>
+                        
+                        {% endfor %}
+                </div>
+            
+        
+    </div>
+    {%endblock%}
+
+    
+</body>
+</html>
