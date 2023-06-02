@@ -12,8 +12,8 @@
     <div class="nav">
         <div class="left"><a href="{% url 'index' %}">Books</a></div>
         <div class="right">
-            <a href="" class="browse">Browse</a>
-            <a href="" class="add">Add a book</a>
+            <a href="{% url 'book:books' %}" class="browse">Browse</a>
+            <a href="{% url 'book:new' %}" class="add">Add a book</a>
         </div>
     </div>
 
